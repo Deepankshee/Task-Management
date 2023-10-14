@@ -3,5 +3,7 @@ using Task = TaskManagement.Domain.Entity.Task;
 
 public interface ITaskService
 {
-    public Task AddTask(Task task);
+    public Guid AddTask(Task task);
+
+    public Task GetTask(Guid id);
 }

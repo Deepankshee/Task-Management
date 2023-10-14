@@ -2,14 +2,15 @@ namespace TaskManagement.Domain.Entity;
 
 public class Task
 {
-    private string _title;
-    private string _description;
-    private DateTime _dueDate;
+    public Guid Id { get; } = Guid.NewGuid();
+    public string Title { get; }
+    public string Description { get; }
+    public DateTime? DueDate { get; }
     
-    public Task(string title, string description, DateTime dueDate)
+    public Task(string title, string description, DateTime? dueDate)
     {
-        _title = title;
-        _description = description;
-        _dueDate = dueDate;
+        Title = title;
+        Description = description;
+        DueDate = dueDate;
     }
 }
