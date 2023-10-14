@@ -24,13 +24,8 @@ public class TaskControllerTests
     public void ShouldAddTaskWithValidRequest()
     {
         TaskController taskController = new TaskController(_mockTaskService.Object,_mapper.Object);
-        AddTaskRequest addTaskRequest = new AddTaskRequest()
-        {
-            Title = "Add user",
-            Description = "Add user with details"
-            
-        };
-        
+        AddTaskRequest addTaskRequest = new AddTaskRequest("add user", "add user with details", DateTime.Now);
+
         var response = taskController.Add(addTaskRequest) as OkObjectResult;
 
         response?.StatusCode.Should().Be((int)HttpStatusCode.OK);

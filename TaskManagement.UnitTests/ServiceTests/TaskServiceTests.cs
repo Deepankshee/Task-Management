@@ -10,7 +10,7 @@ public class TaskServiceTests
     public void ShouldAddTaskWithValidData()
     {
         TaskService taskService = new TaskService() ;
-        Task task = new Task("test title", "test description");
+        Task task = new Task("test title", "test description",DateTime.Now);
         
         taskService.AddTask(task);
 
